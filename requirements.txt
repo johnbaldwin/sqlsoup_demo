@@ -1,0 +1,5 @@
+SQLAlchemy>=0.8.2
+sqlsoup>=0.9.0
+Flask>=0.10
+
+

@@ -15,9 +15,9 @@ restnotes_tables = namedtuple('restnotes_tables',
 # This is used for unit testing
 MEMORY_DATABASE_URI = 'sqlite:///:memory:'
 
-def create_tables(metadata):
+def define_tables(metadata):
     """ Create table definitions. This is used for allowing SQLSoup to 
-        perform its autodiscover.
+        perform its autodiscover on a SQLite memory database instance.
 
         The tables defined below are 'bare-bones' intended to illustrate
         the core concepts of this project
@@ -40,6 +40,7 @@ def create_tables(metadata):
             schema.ForeignKey('libraries.library_id'), nullable = False),
         schema.Column('slug', types.String(80)),
         schema.Column('title', types.String(120), default = u''),
+        schema.Column('description', types.String(240), default = u''),
         )
     page_table = schema.Table('pages', metadata,
         schema.Column('page_id', types.Integer, primary_key = True),
@@ -81,8 +82,7 @@ class Connection(object):
 
         # If running with a memory database instance, need to define the tables
         if self.database_uri == MEMORY_DATABASE_URI:
-            self.tables = create_tables(self.metadata)
-        
+            self.table_definitionss = define_tables(self.metadata)
         
         self.metadata.create_all(self.engine)
         self.soup = sqlsoup.SQLSoup(self.engine)

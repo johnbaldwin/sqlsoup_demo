@@ -1,9 +1,9 @@
 
 import unittest
 
-from restnotes import db
+from notebook import db
 
-class Restnotes_models_TestCase(unittest.TestCase):
+class Notebook_models_TestCase(unittest.TestCase):
 
     def setUp(self):
         self.library_definitions = (

@@ -1,5 +1,5 @@
-SqlSoup Testing with SQLite Demo
-================================
+SqlSoup Testing with SQLite 
+===========================
 
 Overview
 --------
@@ -8,10 +8,8 @@ This repository contains the  code for my presentation at the Boston Python ligh
 
 Slides
 ------
-Slides are available here:
-https://drive.google.com/folderview?id=0B2_Gr4VRB_UvNkRidTUzUmd3X3M&usp=sharing
-These slides provide a brief overview of using SQLSoup with SQLite memory. RESTnotes
-uses SQLite memory for unit tests
+Slides are available `here <https://drive.google.com/folderview?id=0B2_Gr4VRB_UvNkRidTUzUmd3X3M&usp=sharing>`_
+These slides provide a brief overview of using SQLSoup with SQLite memory with accompanying unit test code.  
 
 Installation
 ------------
